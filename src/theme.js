@@ -42,23 +42,16 @@ export const tokensDark = {
   },
 };
 
-//! Check the arraysandobject file in javascript bootcamp folder to understand the functionality in depth
-
 // function that reverses the color palette
 function reverseTokens(tokensDark) {
   const reversedTokens = {};
   Object.entries(tokensDark).forEach(([key, val]) => {
     const keys = Object.keys(val);
-    //   console.log(keys)
     const values = Object.values(val);
-    // console.log(values)
     const length = keys.length;
-    //   console.log(length)
     const reversedObj = {};
     for (let i = 0; i < length; i++) {
       reversedObj[keys[i]] = values[length - i - 1];
-      // console.log(reversedObj[keys[i]])
-      // console.log(values[length - i - 1])
     }
     reversedTokens[key] = reversedObj;
   });
@@ -72,7 +65,6 @@ export const themeSettings = (mode) => {
   return {
     palette: {
       mode: mode,
-      // If mode is equal to dark choose the palette set of dark colors
       ...(mode === "dark"
         ? // ternary operator
           {
@@ -96,7 +88,6 @@ export const themeSettings = (mode) => {
             },
           }
         : {
-            // And if the mode is other than dark choose the palette set of light colors
             // palette values for light mode
             primary: {
               ...tokensLight.primary,
