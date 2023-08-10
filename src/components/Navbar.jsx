@@ -15,6 +15,7 @@ import {
   Search,
   SettingsOutlined,
 } from "@mui/icons-material";
+// Here we've used curly braces so that we can import any function or varible from a module not the whole module
 import { setMode } from "state/globalSlice";
 
 const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {

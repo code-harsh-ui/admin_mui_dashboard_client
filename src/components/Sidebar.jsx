@@ -179,7 +179,7 @@ const Sidebar = ({
 
                 // It converts the text property to lowercase using the toLowerCase() method and stores it in the lctext variable.
                 const lcText = text.toLowerCase();
-                console.log(lcText);
+                // console.log(lcText);
 
                 // Moving on we know to create list with icons we also need to import <listItem> component from "mui" and here we are grabbing the text which was eleminated in !icon statement and injecting it into key to make each element unique
                 return (
