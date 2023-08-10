@@ -30,10 +30,8 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
       }}
     >
       <Toolbar sx={{ justifyContent: "Space-between" }}>
-        {/* Parent Div */}
         <FlexBetween>
           <IconButton
-            // Adding toggle functionality which we've added in Sidebar component
             onClick={() => {
               setIsSidebarOpen(!isSidebarOpen);
             }}

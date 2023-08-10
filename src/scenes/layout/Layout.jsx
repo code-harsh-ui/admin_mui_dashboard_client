@@ -8,7 +8,6 @@ import { Outlet } from "react-router-dom";
 import { useGetUserQuery } from "state/api";
 
 const Layout = () => {
-  // useMediaQurery will return a boolean if it matches the following condition of if the screen size is 600px and more
   const isNonMobile = useMediaQuery("(min-width: 600px)");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   // fetching the current user from initial state which we have in "globalSlice" with the help of reducer which is register in store in "index.js" file
@@ -19,9 +18,6 @@ const Layout = () => {
 
   return (
     <Box width="100%" height="100%">
-      {/* We are passing the "useMediaQuery", "States" as a props to Sidebar component (isNonMobile, drawerWidth, isSidebarOpen, setSidebarOpen) - all these are props which we are passing to sidebar component*/}
-
-      {/* Make display: flex (for Desktop screen) if "isNonMobile" returns true and if it returns "false" make the display "block" (for Mobile screen) */}
       <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
         <Sidebar
           isNonMobile={isNonMobile}
@@ -30,7 +26,6 @@ const Layout = () => {
           setIsSidebarOpen={setIsSidebarOpen}
         />
         <Box>
-          {/* Passing the same props which we passed in sidebar component */}
           <Navbar
             isSidebarOpen={isSidebarOpen}
             setIsSidebarOpen={setIsSidebarOpen}
