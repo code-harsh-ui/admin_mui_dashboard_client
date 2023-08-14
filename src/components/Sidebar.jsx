@@ -9,6 +9,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Divider,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -24,10 +25,13 @@ import {
   PointOfSaleOutlined,
   PublicOutlined,
   ReceiptLongOutlined,
+  SettingsOutlined,
   ShoppingCartOutlined,
   TodayOutlined,
   TrendingUpOutlined,
 } from "@mui/icons-material";
+
+import profileImage from "assets/shelly.jpg";
 
 const navItems = [
   {
@@ -89,6 +93,7 @@ const navItems = [
 ];
 
 const Sidebar = ({
+  user,
   isNonMobile,
   setIsSidebarOpen,
   isSidebarOpen,
@@ -123,7 +128,7 @@ const Sidebar = ({
           }}
         >
           <Box width="100%">
-            <Box m="1.5rem 2rem 2rem 3rem">
+            <Box m="1rem 0rem 0.5rem 3rem">
               <FlexBetween color={theme.palette.secondary.main}>
                 <Box display="flex" alignItems="center" gap="0.5rem">
                   <Typography variant="h4" fontWeight="bold">
@@ -146,7 +151,7 @@ const Sidebar = ({
               {navItems.map(({ text, icon }) => {
                 if (!icon) {
                   return (
-                    <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
+                    <Typography key={text} sx={{ m: "1rem 0 0.5rem 3rem" }}>
                       {text}
                     </Typography>
                   );
@@ -182,7 +187,10 @@ const Sidebar = ({
                       >
                         {icon}
                       </ListItemIcon>
-                      <ListItemText primary={text} />
+                      <ListItemText
+                        sx={{ padding: "0", margin: "0" }}
+                        primary={text}
+                      />
                       {active === lcText && (
                         <ChevronRightOutlined sx={{ ml: "auto" }} />
                       )}
@@ -191,6 +199,49 @@ const Sidebar = ({
                 );
               })}
             </List>
+          </Box>
+          {/* Another Div for UserInfo */}
+          <Box mb="3rem">
+            {/* Used Divider Icon */}
+            <Divider />
+            {/* We have there div's in this "flexBetween" Div */}
+            <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+              {/* //*First Div for Image */}
+              <Box
+                component="img"
+                alt="profile"
+                src={profileImage}
+                height="40px"
+                width="40px"
+                borderRadius="50%"
+                sx={{ objectFit: "cover" }}
+              />
+              {/* //* Second Div for Name and Occupation */}
+              <Box textAlign="left">
+                <Typography
+                  fontWeight="bold"
+                  fontSize="0.9rem"
+                  sx={{ color: theme.palette.secondary[100] }}
+                >
+                  {/* Fetching the data from props object*/}
+                  {user.name}
+                </Typography>
+                <Typography
+                  fontSize="0.8rem"
+                  sx={{ color: theme.palette.secondary[200] }}
+                >
+                  {/* Fetching the data from props object*/}
+                  {user.occupation}
+                </Typography>
+              </Box>
+              {/* //*Third Div for Setting Icon  */}
+              <SettingsOutlined
+                sx={{
+                  color: theme.palette.secondary[300],
+                  fontSize: "25px ",
+                }}
+              />
+            </FlexBetween>
           </Box>
         </Drawer>
       )}
