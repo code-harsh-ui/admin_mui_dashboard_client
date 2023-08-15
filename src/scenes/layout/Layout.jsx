@@ -12,7 +12,7 @@ const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   // fetching the current user from initial state which we have in "globalSlice" with the help of reducer which is register in store in "index.js" file
   const userId = useSelector((state) => state.globalCustom.userId);
-  //! destructuring only "data" from the whole object it means we get bunch of objects like in respsonse like "status, currentData, iserror, isloading" and many more we are only extracting the "data" from the whole object
+  //! destructuring only "data" from the whole object it means we get bunch of objects like in respsonse like "status, currentData, iserror, isloading" and many more we are only extracting the "data" from the whole object and the userId we are grabbing from "reducer" using useSelector hook
   const { data } = useGetUserQuery(userId);
   console.log(data);
 
