@@ -200,13 +200,9 @@ const Sidebar = ({
               })}
             </List>
           </Box>
-          {/* Another Div for UserInfo */}
           <Box mb="3rem">
-            {/* Used Divider Icon */}
             <Divider />
-            {/* We have there div's in this "flexBetween" Div */}
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
-              {/* //*First Div for Image */}
               <Box
                 component="img"
                 alt="profile"
@@ -216,25 +212,21 @@ const Sidebar = ({
                 borderRadius="50%"
                 sx={{ objectFit: "cover" }}
               />
-              {/* //* Second Div for Name and Occupation */}
               <Box textAlign="left">
                 <Typography
                   fontWeight="bold"
                   fontSize="0.9rem"
                   sx={{ color: theme.palette.secondary[100] }}
                 >
-                  {/* Fetching the data from props object*/}
                   {user.name}
                 </Typography>
                 <Typography
                   fontSize="0.8rem"
                   sx={{ color: theme.palette.secondary[200] }}
                 >
-                  {/* Fetching the data from props object*/}
                   {user.occupation}
                 </Typography>
               </Box>
-              {/* //*Third Div for Setting Icon  */}
               <SettingsOutlined
                 sx={{
                   color: theme.palette.secondary[300],
