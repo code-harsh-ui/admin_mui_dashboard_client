@@ -9,7 +9,6 @@ export const api = createApi({
       query: (id) => `general/user/${id}`,
       providesTags: ["User"],
     }),
-    //! Here we have raising a query of fetch this api with the endpoint (http://localhost:5001/client/products) localhost 5001 is because we are using the baseUrl which is defined in env.local file
     getProducts: build.query({
       query: () => "client/products",
       providesTags: ["Products"],
