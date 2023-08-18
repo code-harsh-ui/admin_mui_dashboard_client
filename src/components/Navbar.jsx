@@ -126,11 +126,11 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               />
             </Button>
             <Menu
-              sx={{ mt: 5 }}
               anchorEl={anchorEl}
               open={isOpen}
               onClose={handleClose}
-              anchorOrigin={{ vertical: "buttom", horizontal: "center" }}
+              disableScrollLock={true}
+              anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             >
               <MenuItem onClick={handleClose}>Log Out</MenuItem>
             </Menu>
