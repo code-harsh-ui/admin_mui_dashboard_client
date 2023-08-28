@@ -7,6 +7,7 @@ import Dashboard from "scenes/dashboard/Dashboard";
 import Layout from "scenes/layout/Layout";
 import { themeSettings } from "theme";
 import Products from "scenes/product/Products";
+import Customer from "scenes/customers/Customer";
 
 function App() {
   const mode = useSelector((state) => {
@@ -28,6 +29,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               {/* Products route, note that the url here is only for ui part there is no connection with backend url here */}
               <Route path="/products" element={<Products />} />
+              <Route path="/customers" element={<Customer />} />
             </Route>
           </Routes>
         </ThemeProvider>

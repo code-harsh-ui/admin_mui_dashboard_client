@@ -31,7 +31,7 @@ import {
   TrendingUpOutlined,
 } from "@mui/icons-material";
 
-import profileImage from "assets/shelly.jpg";
+// import profileImage from "assets/shelly.jpg";
 
 const navItems = [
   {
@@ -203,15 +203,20 @@ const Sidebar = ({
           <Box mb="3rem">
             <Divider />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
-              <Box
-                component="img"
-                alt="profile"
-                src={profileImage}
-                height="40px"
-                width="40px"
-                borderRadius="50%"
-                sx={{ objectFit: "cover" }}
-              />
+              {user.img && user.img.length > 0 ? (
+                <Box
+                  component="img"
+                  alt="profile"
+                  src={user.img[0]}
+                  height="40px"
+                  width="40px"
+                  borderRadius="50%"
+                  sx={{ objectFit: "cover" }}
+                />
+              ) : (
+                <div>No profile image available</div>
+              )}
+
               <Box textAlign="left">
                 <Typography
                   fontWeight="bold"
